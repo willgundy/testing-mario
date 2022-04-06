@@ -6,6 +6,7 @@ kaboom({
     clearColor: [0, 0, 0, 1],
 });
 
+//sprites, blocks to build world
 loadSprite('coin', 'assets/coin.png');
 loadSprite('brick', 'assets/brick.png');
 loadSprite('block', 'assets/box.png');
@@ -14,6 +15,11 @@ loadSprite('mushroom', 'assets/mushroom.png');
 loadSprite('evil-mushroom', 'assets/evil-mushroom.png');
 loadSprite('surprise-box', 'assets/surprise-box.png');
 loadSprite('pipe', 'assets/pipe.png');
+
+//sounds to play during gameplay
+loadRoot('https://dazzling-vacherin-8cb912.netlify.app/assets/');
+//loadRoot('http://localhost:5501/assets/');
+loadSound('jump', 'marioJump.mp3');
 
 
 
@@ -60,6 +66,7 @@ scene('game', () => {
     keyPress('space', () => {
         if (player.grounded()) {
             player.jump(marioJumpHeight);
+            play('jump');
         }
     });
 
