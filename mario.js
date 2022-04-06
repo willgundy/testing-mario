@@ -101,11 +101,9 @@ scene('game', ({ score, count }) => {
 
     mario.onCollide('coin-surprise', (obj) => {
         console.log(mario.isGrounded());
-        if (obj.isBottom()) {
-            gameLevel.spawn('*', obj.gridPos.sub(0, 1));
-            gameLevel.spawn('+', obj.gridPos.sub(0, 0));
-            destroy(obj);
-        }
+        gameLevel.spawn('*', obj.gridPos.sub(0, 1));
+        gameLevel.spawn('+', obj.gridPos.sub(0, 0));
+        destroy(obj);
     });
 
     // mario.onCollide('headbump', (obj) => {
