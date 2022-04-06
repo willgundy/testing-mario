@@ -18,8 +18,9 @@ loadSprite('pipe', 'assets/pipe.png');
 
 //sounds to play during gameplay
 loadRoot('https://dazzling-vacherin-8cb912.netlify.app/assets/');
-//loadRoot('http://localhost:5501/assets/');
+// loadRoot('http://localhost:5501/assets/');
 loadSound('jump', 'marioJump.mp3');
+loadSound('theme', 'mainTheme.mp3');
 
 
 
@@ -89,6 +90,7 @@ scene('game', () => {
         '+': [sprite('block'), solid()],
     };
 
+    play('theme');
     const gameLevel = addLevel(map, levelConfig);
 });
 
