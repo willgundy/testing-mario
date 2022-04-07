@@ -99,14 +99,18 @@ scene('game', ({ score, count }) => {
         console.log(mario.isGrounded());
     });
 
+    on('mario', 'coin-surprise', (box) => {
+
+    });
+
     mario.onCollide('coin-surprise', (obj) => {
-        console.log(mario.isGrounded());
+        console.log(isBottom());
         gameLevel.spawn('*', obj.gridPos.sub(0, 1));
         gameLevel.spawn('+', obj.gridPos.sub(0, 0));
         destroy(obj);
     });
 
-    // mario.onCollide('headbump', (obj) => {
+    // mario.on('headbump', (obj) => {
     //     if (obj.is('coin-surprise')) {
     //         gameLevel.spawn('*', obj.gridPos.sub(0, 1));
     //         gameLevel.spawn('+', obj.gridPos.sub(0, 0));
